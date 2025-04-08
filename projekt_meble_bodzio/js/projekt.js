@@ -98,10 +98,9 @@ form.addEventListener("submit", (e) => {
   }
 });
 
-      // Counter animation
-      const counters = document.querySelectorAll(".counter");
-
-      counters.forEach((counter) => {
+      // Counter 
+        const counters = document.querySelectorAll(".counter");
+        counters.forEach((counter) => {
         const target = parseInt(counter.getAttribute("data-target"));
         const duration = 2000; // 2 seconds
         const step = target / (duration / 16); // 60 FPS
