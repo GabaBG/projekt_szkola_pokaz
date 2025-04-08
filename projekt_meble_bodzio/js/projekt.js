@@ -97,3 +97,22 @@ form.addEventListener("submit", (e) => {
     appendAlert("Proszę wypełnić wszystkie pola formularza!", "danger");
   }
 });
+
+      // Counter animation
+      const counters = document.querySelectorAll(".counter");
+
+      counters.forEach((counter) => {
+        const target = parseInt(counter.getAttribute("data-target"));
+        const duration = 2000; // 2 seconds
+        const step = target / (duration / 16); // 60 FPS
+
+        function updateCount() {
+          const count = parseInt(counter.innerText);
+          if (count < target) {
+            counter.innerText = Math.min(count + Math.ceil(step), target);
+            setTimeout(updateCount, 16);
+          }
+        }
+
+        updateCount();
+      });
